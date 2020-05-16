@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+    <div *ngIf="orders" class="container p-4">
+        <h4 class="mt-1 mb-4 text-center">Новые заказы, которые можно выполнить:</h4>
+    
+        <div class="alert alert-success" *ngIf="newOrder">Вы успешно взяли заказ. Перейти к <a routerLink="/carrier/orders" class="link">Perfomed Orders</a></div>
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <div *ngFor="let order of orders" class="">
+                <div class="card mb-3 p-2 justify-content-start row" style="min-height: 80px">
+                    <span > <span class="mr-2">Дата заказа: {{order.data}}</span>     Стоимость: {{order.price}} <br></span> 
+                    От: {{order.name_sender}}, {{order.phone_sender}}, {{order.address_sender}} <br>
+                    Кому: {{order.name_recipient}}, {{order.phone_recipient}}, {{order.address_recipient}} <br>
+                    <button class="btn btn-sm btn-primary" style="width: 150px;" (click)="onTake(order.id)">Доставить</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

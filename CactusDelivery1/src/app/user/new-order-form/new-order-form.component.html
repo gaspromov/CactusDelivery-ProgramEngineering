@@ -1,0 +1,60 @@
+
+<form class="card p-4" [formGroup]="formNewOrder" (ngSubmit)="newOrder()">
+    <h6>Заполните форму:</h6>
+ <!-- [formGroup]="formSignUp" (ngSubmit)="signup()" > -->
+    <div id="carouselRegUser" class="carousel slide .garants  pt-4"  data-ride="" data-interval="false">
+            
+          <div class="carousel-inner mb-3">
+              
+            <div class="carousel-item active">
+                <!-- Первый шаг -->
+                <label for="name" class="mb-0">Фамилия и имя отправителя: </label>
+                <input type="text" class="form-control mb-2" formControlName="name_sender" name="name">
+                <label for="address1" class="mb-0">Адрес отправления: </label>
+                <input type="text" class="form-control mb-2" formControlName="address_sender" name="address" placeholder="7-я Парковая, 9к26">
+                <label for="phone1" class="mb-0">Номер телефона отправителя: </label>
+                <input type="text" class="form-control mb-2" formControlName="phone_sender" name="phone">
+                <!-- <label for="name-user" class="m-0" >Имя:</label>
+                <input type="name" class="form-control mb-2" id="name-user" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name" >
+            
+                <label for="surname-user" class="m-0">Фамилия:</label>
+                <input type="surname" class="form-control mb-2" id="pass-signup" formControlName="sername" placeholder="Введите фамилию..." name="surname">
+                
+                <label for="link-vk-user" class="m-0">Ссылка на вк:</label>
+                <input type="link" igxMask="00/00/0000" class="form-control" id="link-vk-user" formControlName="vk_link" aria-describedby="link-vk" placeholder="Введите ссылку на ваш вк..." name="link"> -->
+                <!-- . -->
+    
+            </div>
+            <div class="carousel-item"  >
+                <label for="name2" class="mb-0" >Фамилия и имя получателя: </label>
+                <input type="text" class="form-control mb-2" formControlName="name_recipient"  name="name">
+                <label for="address2" class="mb-0">Адрес получения: </label>
+                <input type="text" class="form-control mb-2" formControlName="address_recipient" name="address" placeholder="7-я Парковая, 9к26">
+                <label for="phone2" class="mb-0">Номер телефона получателя: </label>
+                <input type="text" class="form-control mb-2" formControlName="phone_recipient" name="phone">
+            </div>
+            
+            <div class="carousel-item"  >
+                К сожалению использование АПИ с подсчетом километража между двумя точками стоит денег. Поэтому введите километраж вручную
+                <label for="km" class="mb-0" >Фамилия и имя получателя: </label>
+                <input type="text" class="form-control mb-2" formControlName="km"  name="km">
+                Стоимость заказа составит: <input formControlName="price" [value]="formNewOrder.value.km * km_price" disabled>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a class="btn mr-1"  *ngIf="step == 0" disabled>
+                <span  aria-hidden="true" >Назад</span>
+            </a>
+            <a href="#carouselRegUser" class="btn mr-1" role="button" data-slide="prev" (click)='stepN(-1)' *ngIf="step >0">
+                <span  aria-hidden="true" >Назад</span>
+            </a>
+            <button class="btn btn-success ml-1" href="#carouselRegUser" role="button" data-slide="next" (click)="stepN(1)"  *ngIf="step <2">
+                <span aria-hidden="true">Вперёд</span>
+            </button>
+            <button type="submit" class="btn btn-success ml-1"  *ngIf="step == 2" [disabled]="formNewOrder.invalid">
+                <span aria-hidden="true">Отправить заказ</span>
+            </button>
+           </div>
+    </div>
+    </form>
+    

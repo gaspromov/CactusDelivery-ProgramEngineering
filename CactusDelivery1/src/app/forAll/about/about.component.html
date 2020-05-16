@@ -1,0 +1,22 @@
+<div class="media">
+    <div class="media-body">
+        <h4 class="h4">О нас</h4>
+        <p class="text">
+             Dolor sit amet, consectetur adipiscing elit,
+             sed do eiusmod tempor incididunt ut labore et 
+             dolore magna aliqua. Ut enim ad minim veniam, 
+             quis nostrud exercitation ullamco laboris nisi
+              ut aliquip ex ea commodo consequat. Duis aute 
+              irure dolor in reprehenderit in voluptate velit
+               esse cillum dolore eu fugiat nulla pariatur. 
+               Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum. 
+        </p>
+            <a *ngIf="isLogin" class="btn btn-success" routerLink="/user/newOrder"> Отправить айтем </a>
+            <a *ngIf="!isLogin" class="btn btn-success text-white" data-toggle="modal" data-target=".sign-in"> Отправить айтем </a>
+            
+            <a href="#" class="btn">Как это работает</a>
+    </div>
+    
+</div>
+

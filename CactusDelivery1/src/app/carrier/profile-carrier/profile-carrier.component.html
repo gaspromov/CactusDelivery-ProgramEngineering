@@ -1,0 +1,38 @@
+
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md"> 
+            <h4 class="h4">Мой профиль</h4>
+            <div *ngIf="confirm" class="alert alert-success">Ваши данные изменены</div>
+                <form action="" [formGroup]="formProfile" class="form-group" (ngSubmit)="onUpdate()">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input class='form-control mb-2' type="text" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name">
+                            <input class='form-control mb-2' type="text" formControlName="sername" aria-describedby="surname" placeholder="Введите фамилию..."  name="surname">
+                        </div>
+                        <div class="col-md-4">
+                            <input class='form-control mb-2' type="text" formControlName="email" aria-describedby="email" placeholder="Введите email..."  name="email">
+                            <input class='form-control mb-2' type="text" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
+        
+                        </div>
+                        <div class="col-md-4">
+                            <input class='form-control mb-2' type="text" formControlName="car_brand" aria-describedby="car_brand"  name="car_brand">
+                            <input class='form-control mb-2' type="text" formControlName="car_number" aria-describedby="car_number"  name="car_number">
+                            <input class='form-control mb-2' type="text" formControlName="car_color" aria-describedby="car_color" name="car_color">
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <button type="submit" class="form-control-sm form-control bg-success col-md-4 mr-3" [disabled]="formProfile.invalid"> Сохранить</button>
+                                    <a class="form-control-sm form-control bg-grey col-md-7 text-center"> Сменить пароль</a>
+                                </div>
+                            </div>
+                        </div>
+
+                </form>            
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

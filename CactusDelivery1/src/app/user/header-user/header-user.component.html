@@ -1,0 +1,36 @@
+
+    <!-- <img src="http://cactusdeliverylogo.std-715.ist.mospolytech.ru/CactusDelivery.svg" width="173" height="70" alt=""> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" routerLink="/user/home">181-321 Gazratov&Kuzyaeva</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="container">
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/newOrder" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Make order</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/orders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/user/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="authService.SignOut()" routerLink="/unsign/home">Sign Out</a>
+            </li>
+          </ul>
+            </div>
+        </div>
+      </nav>
+
+      
+
+
+
+

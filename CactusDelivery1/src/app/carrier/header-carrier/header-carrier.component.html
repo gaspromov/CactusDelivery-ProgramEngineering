@@ -1,0 +1,33 @@
+
+    <!-- <img src="http://cactusdeliverylogo.std-715.ist.mospolytech.ru/CactusDelivery.svg" width="173" height="70" alt=""> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" routerLink="/carrier/profile">181-321 Gazratov&Kuzyaeva</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="container">
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/carrier/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Profile <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/carrier/newOrders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">New orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/carrier/orders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Performed orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="authService.SignOut()" routerLink="/unsign/home">Sign Out</a>
+            </li>
+          </ul>
+            </div>
+        </div>
+      </nav>
+
+      
+
+
+
+

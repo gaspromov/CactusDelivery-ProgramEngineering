@@ -1,0 +1,28 @@
+
+    <!-- Кнопка "закрыть" -->
+    
+    <button type="button" class="close pr-1" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <!-- . -->
+
+  <div class="p-4">
+
+    <div  *ngIf="auth.confirm == 'no'">
+      <h4 class="h4 text-center">Регистрация</h4>
+      <app-signup-user *ngIf="status_registr=='user' "></app-signup-user>
+      <app-error *ngIf="status_registr=='garant'"></app-error>
+      <!-- <app-signup-garant *ngIf="status_registr=='garant'"></app-signup-garant> -->
+      <app-signup-carrier *ngIf="status_registr=='carrier'"></app-signup-carrier>
+    </div>
+      
+          <!-- Подтверждение по email -->
+      <app-verify-email *ngIf="auth.confirm != 'no'"></app-verify-email>
+    </div>
+    
+    <div class="d-flex justify-content-center" *ngIf="auth.confirm == 'no'">
+        <a class="link text-muted mr-2" (click)="status_registr = 'user'" *ngIf="status_registr != 'user'"> <u>Пользователем</u> </a>
+          <a class="link text-muted mr-2" (click)="status_registr = 'garant'" *ngIf="status_registr != 'garant'"> <u>Гарантом</u> </a>
+          <a class="link text-muted" (click)="status_registr = 'carrier'" *ngIf="status_registr != 'carrier'"> <u>Доставщиком</u> </a>
+      </div>
+  

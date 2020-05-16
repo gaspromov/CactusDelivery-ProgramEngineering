@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "CactusDelivery1",
+      "public": "dist/CactusDelivery1",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

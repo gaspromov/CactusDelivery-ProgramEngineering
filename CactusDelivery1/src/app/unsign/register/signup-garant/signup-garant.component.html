@@ -1,0 +1,72 @@
+
+        
+  
+        
+
+        
+<form class="authBlock" [formGroup]="formSignUp" (ngSubmit)="signup()" >
+    <div id="carouselRegCarrier" class="carousel slide .garants  pt-4"  data-ride="" data-interval="false">
+            
+          <div class="carousel-inner mb-3">
+              
+            <div class="carousel-item active">
+                <!-- Первый шаг -->
+                <label for="name-garant" class="m-0" >Имя:</label>
+                <input type="name" class="form-control mb-2" id="name-garant" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name" >
+            
+                <label for="surname-garant" class="m-0">Фамилия:</label>
+                <input type="surname" class="form-control mb-2" id="surname-garant" formControlName="surname" placeholder="Введите фамилию..." name="surname">
+                
+                <label for="phone-carrier" class="m-0">Номер телефона:</label>
+                <input type="phone" class="form-control" id="phone-garant" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
+                <!-- . -->
+    
+            </div>
+            <div class="carousel-item"  >
+                <!-- Второй шаг -->
+                <label for="feedback-number" class="m-0">Количество отзывов в вк:</label>
+                <input type="text" class="form-control mb-2" id="feedback-number" formControlName="feedback_number" placeholder="Введите число..."  name="brand-car">
+            
+                <label for="vk-link-feedback" class="m-0">Ссылка на отзывы вк:</label>
+                <input type="text" class="form-control mb-2" id="vk-link-feedback" formControlName="feedback_vk_link" placeholder="Вставьте ссылку..." name="vk-link-feedback">
+
+                <label for="vk-garant-signup" class="m-0">Ссылка на профиль вк:</label>
+                <input type="text" class="form-control" id="vk-garant-signup" formControlName="vk_link" placeholder="Вставьте ссылку..."  name="vk-garant-signup">
+                
+                <!-- . --> 
+            </div>
+            <div class="carousel-item"  >
+                <!-- Третий шаг -->
+                <label for="email-garant-signup" class="m-0">Email адрес:</label>
+                <input type="email" class="form-control mb-2" id="email-garant-signup" formControlName="email" aria-describedby="emailHelp" placeholder="Введите email..."  name="email">
+            
+                <label for="pass-garant-signup" class="m-0">Пароль:</label>
+                <input type="password" class="form-control mb-2" id="pass-garant-signup" formControlName="password" placeholder="Введите пароль..." name="pass">
+
+                <div class="text-center">
+                    <strong>Регистрация не является подтверждением того, что вы станите гарантом. <br>
+                    Каждый доставщик тщательно проверяется.</strong>
+
+                </div>
+
+                
+                <!-- . --> 
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a class="btn mr-1"  *ngIf="step == 0" disabled>
+                <span  aria-hidden="true" >Назад</span>
+            </a>
+            <a href="#carouselRegCarrier" class="btn mr-1" role="button" data-slide="prev" (click)='stepN(-1)' *ngIf="step >= 1">
+                <span  aria-hidden="true" >Назад</span>
+            </a>
+            <button class="btn btn-success ml-1" href="#carouselRegCarrier" role="button" data-slide="next" (click)="stepN(1)"  *ngIf="step == 0 || step == 1">
+                <span aria-hidden="true">Вперёд</span>
+            </button>
+            <button type="submit" class="btn btn-success ml-1"  *ngIf="step == 2" [disabled]="formSignUp.invalid">
+                <span aria-hidden="true">Зарегистрироваться</span>
+            </button>
+           </div>
+    </div>
+    </form>
+    

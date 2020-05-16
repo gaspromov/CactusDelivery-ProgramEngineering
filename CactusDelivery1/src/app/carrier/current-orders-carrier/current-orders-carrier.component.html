@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+    <div *ngIf="orders" class="container p-4">
+        <h4 class="mt-1 mb-4 text-center">Выполняемые заказы:</h4>
+    
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <div *ngFor="let order of orders" class="">
+                <div class="card mb-3 p-2 justify-content-start row" style="min-height: 80px">
+                    <span > 
+                        <span class="mr-2">Дата заказа: {{order.data}}</span>     
+                        Стоимость: {{order.price}}
+                    </span> 
+                    От: {{order.name_sender}}, {{order.phone_sender}}, {{order.address_sender}} <br>
+                    Кому: {{order.name_recipient}}, {{order.phone_recipient}}, {{order.address_recipient}} <br>
+                    <div>
+                        <span class="btn btn-sm btn-primary mr-2" style="width: 200px;" 
+                        [ngClass]="{
+                        'btn-success': order.status == 'Доставлено', 
+                        'btn-warning': order.status == 'Выехали за посылкой',
+                        'btn-danger': order.status == 'Доставляется'
+                        }"
+                        >{{order.status}}</span>
+                        <span class="btn btn-sm btn-danger" style="width: 300px;" *ngIf="order.status == 'Выехали за посылкой'" (click)="newStatus(order.id, order.status)">Я забрал посылку и еду к получателю</span>
+                        <span class="btn btn-sm btn-success" style="width: 200px;" *ngIf="order.status == 'Доставляется'" (click)="newStatus(order.id, order.status)">Я доставил посылку</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

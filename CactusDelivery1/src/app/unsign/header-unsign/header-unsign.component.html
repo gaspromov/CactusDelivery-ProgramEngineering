@@ -1,0 +1,75 @@
+
+    <!-- <img src="http://cactusdeliverylogo.std-715.ist.mospolytech.ru/CactusDelivery.svg" width="173" height="70" alt=""> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">181-321 Gazratov&Kuzyaeva</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <!-- Модальное окно Войти -->
+            <li>
+              <button class="btn btn-primary mr-2" data-toggle="modal" data-target=".sign-in">Войти</button>
+            </li>
+            <!-- Модальное окно Регистрация -->
+            <li>
+              <button class="btn btn-primary nav-item" data-toggle="modal" data-target=".sign-up">Зарегистрироваться</button>
+            </li>
+            <!-- . -->
+          </ul>
+        </div>
+      </nav>
+
+      
+      <!--Модальное окноВход -->
+<div class="modal fade sign-in" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xmd">
+    <div class="modal-content">
+
+      <!-- Компонент "вход" -->
+      <app-login></app-login>
+      <!-- . -->
+
+    </div>
+  </div>
+</div>
+
+
+ <!-- Модальное окно Регистрация -->
+ <div class="modal fade sign-up" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xmd">
+    <div class="modal-content">
+
+      <!-- Компонент "регистрация" -->
+      <app-signup></app-signup>
+      <!-- . -->
+
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно "забыл пароль" -->
+<div class="modal fade forgot" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xmd">
+    <div class="modal-content">
+
+      <!-- Компонент "Забыл пароль" -->
+      <app-forgot-password></app-forgot-password>
+      <!-- . -->
+
+    </div>
+  </div>
+</div>
+
+
+
+

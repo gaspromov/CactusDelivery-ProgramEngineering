@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+    
+    <div *ngIf="users" class="container p-4">
+        <h4 class="mt-1 mb-4 text-center">Все пользователи</h4>
+        
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <div *ngFor="let user of users" class="">
+                <div class="card mb-3 p-2 justify-content-start row" style="min-height: 80px" *ngIf="user.email!='gazratov59@gmail.com' && user.email!='gaspromov@mail.ru' && user.status!='admin'">
+                    <div > <span class="mr-2">Имя и фамилия: {{user.name}} {{user.sername}}</span>     Номер телефона: {{user.phone}}<br></div> 
+                    <div>E-mail: {{user.email}}</div>
+                    <div *ngIf="user.status=='user'">Ссылка на вк: {{user.vk_link}}</div>
+                    <div *ngIf="user.status=='carrier'"><span class="mr-2">Машина: {{user.car_brand}}</span> Цвет: {{user.car_color}} <span class="ml-2">Номер: {{user.car_number}}</span></div>
+                    <div>
+                        <span class="btn btn-sm btn-primary mr-2" style="width: 150px;" 
+                        [ngClass]="{
+                            'btn-success': user.status == 'user',
+                            'btn-warning': user.status == 'carrier'}">{{user.status}}</span>
+                        <button class="btn-danger btn btn-sm" *ngIf="user.status=='carrier'" (click)="onDeleteCarrier(user.uid)">Сделать клиентом </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

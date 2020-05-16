@@ -1,0 +1,72 @@
+
+        
+  
+        
+
+        
+<form class="authBlock" [formGroup]="formSignUp" (ngSubmit)="signup()" >
+    <div id="carouselRegCarrier" class="carousel slide .garants  pt-4"  data-ride="" data-interval="false">
+            
+          <div class="carousel-inner mb-3">
+              
+            <div class="carousel-item active">
+                <!-- Первый шаг -->
+                <label for="name-carrier" class="m-0" >Имя:</label>
+                <input type="name" class="form-control mb-2" id="name-carrier" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name" >
+            
+                <label for="surname-carrier" class="m-0">Фамилия:</label>
+                <input type="surname" class="form-control mb-2" id="surname-carrier" formControlName="sername" placeholder="Введите фамилию..." name="surname">
+                
+                <label for="phone-carrier" class="m-0">Номер телефона:</label>
+                <input type="phone" class="form-control" id="phone-carrier" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
+                <!-- . -->
+    
+            </div>
+            <div class="carousel-item"  >
+                <!-- Второй шаг -->
+                <label for="brand-carrier-signup" class="m-0">Марка и модель автомобиля:</label>
+                <input type="text" class="form-control mb-2" id="brand-carrier-signup" formControlName="car_brand" placeholder="Honda Civic"  name="brand-car">
+            
+                <label for="number-carrier-signup" class="m-0">Номер автомобиля:</label>
+                <input type="text" class="form-control mb-2" id="number-carrier-signup" formControlName="car_number" placeholder="н000нн" name="number-car">
+
+                <label for="color-carrier-signup" class="m-0">Цвет автомобиля:</label>
+                <input type="text" class="form-control" id="color-carrier-signup" formControlName="car_color" placeholder="Желтый"  name="color-car">
+                
+                <!-- . --> 
+            </div>
+            <div class="carousel-item"  >
+                <!-- Третий шаг -->
+                <label for="email-carrier-signup" class="m-0">Email адрес:</label>
+                <input type="email" class="form-control mb-2" id="email-carrier-signup" formControlName="email" aria-describedby="emailHelp" placeholder="Введите email..."  name="email">
+            
+                <label for="pass-carrier-signup" class="m-0">Пароль:</label>
+                <input type="password" class="form-control mb-2" id="pass-carrier-signup" formControlName="password" placeholder="Введите пароль..." name="pass">
+
+                <div class="text-center">
+                    <strong>Регистрация не является подтверждением того, что вы станите доставщиком. <br>
+                    Каждый доставщик тщательно проверяется.</strong>
+
+                </div>
+
+                
+                <!-- . --> 
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a class="btn mr-1"  *ngIf="step == 0" disabled>
+                <span  aria-hidden="true" >Назад</span>
+            </a>
+            <a href="#carouselRegCarrier" class="btn mr-1" role="button" data-slide="prev" (click)='stepN(-1)' *ngIf="step >= 1">
+                <span  aria-hidden="true" >Назад</span>
+            </a>
+            <button class="btn btn-success ml-1" href="#carouselRegCarrier" role="button" data-slide="next" (click)="stepN(1)"  *ngIf="step == 0 || step == 1">
+                <span aria-hidden="true">Вперёд</span>
+            </button>
+            <button type="submit" class="btn btn-success ml-1"  *ngIf="step == 2" [disabled]="formSignUp.invalid">
+                <span aria-hidden="true">Зарегистрироваться</span>
+            </button>
+           </div>
+    </div>
+    </form>
+    

@@ -1,0 +1,53 @@
+
+        
+  
+        
+
+        
+<form class="authBlock" [formGroup]="formSignUp" (ngSubmit)="signup()" >
+<div id="carouselRegUser" class="carousel slide .garants  pt-4"  data-ride="" data-interval="false">
+        
+      <div class="carousel-inner mb-3">
+          
+        <div class="carousel-item active">
+            <!-- Первый шаг -->
+            <label for="name-user" class="m-0" >Имя:</label>
+            <input type="name" class="form-control mb-2" id="name-user" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name" >
+        
+            <label for="surname-user" class="m-0">Фамилия:</label>
+            <input type="surname" class="form-control mb-2" id="pass-signup" formControlName="sername" placeholder="Введите фамилию..." name="surname">
+            
+            <label for="link-vk-user" class="m-0">Ссылка на вк:</label>
+            <input type="link" igxMask="00/00/0000" class="form-control" id="link-vk-user" formControlName="vk_link" aria-describedby="link-vk" placeholder="Введите ссылку на ваш вк..." name="link">
+            <!-- . -->
+
+        </div>
+        <div class="carousel-item"  >
+            <!-- Второй шаг -->
+            <label for="email-user-signup" class="m-0">Email адрес:</label>
+            <input type="email" class="form-control mb-2" id="email-user-signup" formControlName="email" aria-describedby="emailHelp" placeholder="Введите email..."  name="email">
+        
+            <label for="pass-user-signup" class="m-0">Пароль:</label>
+            <input type="password" class="form-control mb-2" id="pass-user-signup" formControlName="password" placeholder="Введите пароль..." name="pass">
+            
+            <label for="phone-user" class="m-0">Номер телефона:</label>
+            <input type="phone" class="form-control" id="phone-user" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
+            <!-- . --> 
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="btn mr-1"  *ngIf="step == 0" disabled>
+            <span  aria-hidden="true" >Назад</span>
+        </a>
+        <a href="#carouselRegUser" class="btn mr-1" role="button" data-slide="prev" (click)='stepN(-1)' *ngIf="step == 1">
+            <span  aria-hidden="true" >Назад</span>
+        </a>
+        <button class="btn btn-success ml-1" href="#carouselRegUser" role="button" data-slide="next" (click)="stepN(1)"  *ngIf="step == 0">
+            <span aria-hidden="true">Вперёд</span>
+        </button>
+        <button type="submit" class="btn btn-success ml-1"  *ngIf="step == 1" [disabled]="formSignUp.invalid">
+            <span aria-hidden="true">Зарегистрироваться</span>
+        </button>
+       </div>
+</div>
+</form>
