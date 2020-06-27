@@ -9,6 +9,10 @@ import { OrdersService } from 'src/app/shared/firestore/orders/orders.service';
 export class CurrentOrdersComponent implements OnInit {
   orders: any = [{}];
 
+  deliveried: boolean = false;
+  inProcess: boolean = false;
+  willArrive: boolean = false;
+  noCarrier: boolean = false;
   constructor(
     public db: OrdersService,
   ) { }

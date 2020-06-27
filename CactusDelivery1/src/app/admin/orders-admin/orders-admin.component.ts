@@ -8,7 +8,10 @@ import { OrdersService } from 'src/app/shared/firestore/orders/orders.service';
 })
 export class OrdersAdminComponent implements OnInit {
   orders: any = [{}];
-
+  deliveried: boolean = false;
+  inProcess: boolean = false;
+  willArrive: boolean = false;
+  noCarrier: boolean = false;
   constructor(
     public db: OrdersService,
   ) { }
@@ -32,6 +35,7 @@ export class OrdersAdminComponent implements OnInit {
       data: e.payload.doc.get('data'),
       phone_sender: e.payload.doc.get('phone_sender'),
       name_sender: e.payload.doc.get('name_sender'),
+      price: e.payload.doc.get('price'),
       name_recipient: e.payload.doc.get('name_recipient'),
       phone_recipient: e.payload.doc.get('phone_recipient'),
       address_recipient: e.payload.doc.get('address_recipient'),
@@ -40,6 +44,5 @@ export class OrdersAdminComponent implements OnInit {
     }
     return orders;
   }
-
 
 }

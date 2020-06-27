@@ -27,6 +27,8 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user'));
       } else {
         localStorage.setItem('user', null);
+        localStorage.removeItem('userData');
+        this.router.navigate(['unsign/home'])
         JSON.parse(localStorage.getItem('user'));
       }
     })
@@ -108,10 +110,10 @@ export class AuthService {
   }
 
   async updateUserPassword(password) {
-    (await this.afAuth.currentUser).updatePassword(password).then(function() {
-      console.log('success!')
+     return (await this.afAuth.currentUser).updatePassword(password).then(function() {
+      return 'good'
     }).catch(function(error) {
-      alert(error)
+      return 'bad'
     });
   }
 

@@ -1,0 +1,42 @@
+
+<app-header-unsign></app-header-unsign>
+<div class=" justify-content-center">
+    
+    <div class="container p-4">
+        <h4 class="mt-1 mb-1 text-center">Техническая документация к данному проекту.</h4>
+        <h5 class="mt-0 text-center mb-4"> Весь код располагается по <a class="link" target="_blank" href="https://github.com/gaspromov/program_engineering/tree/master/6%20%D0%BB%D0%B0%D0%B1%D0%B0.%20%D0%92%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5/CactusDelivery">данной ссылке</a></h5>
+        
+        <div class="col-md-1">
+        </div>
+        <div class="col-md">
+            <p class="mt-0 mb-4 text-center 3">Для того, чтобы запустить данный проект у себя: <br>
+                <strong class="ml-3">1. Скачайте файлы из гит<br>
+                    2. Введите команду в консоле в папке проекта npm i <br>
+                    3. Введите команду в консоле в папке проекта ng serve -o
+                </strong>
+            </p>
+            <p> Файлы каждого статуса юзера хранятся в соответствующей папке: <br><strong> Админа в Admin, Клиента в User, Доставщика в Carrier, Незалогиненного в Unsign</strong></p>
+            <p> Все сервисы для работы с бд располагаются в папке <strong> shared</strong>. В качестве базы данных выступает Firestore из API Firebase. <br>
+                 <b> В сервисе AuthService происходят все процессы связанные с авторизацие(sign-in, sign-up, sign-out и тд); </b> <br>
+                <b> В сервисе OrderService происходит получение, изменение, удаление и создание заказов. А также получение и изменение данных о пользователе.</b>   
+            </p>
+            <p>
+                Все существующие маршруты прописаны в <strong>AppRoutingModule</strong>. 
+                Там же осущесвляется предоставление и ограничение доступа к некоторым маршрутам с помощью Guards. Все Гарды хранятся в папке <strong>Shared</strong> <br>
+                
+            </p><br>
+
+            <p>
+                У каждого из пользователей реализован стандартный вывод данных, получаемых с бд. В файле TS, функции ngOnInit
+                каждого компонентов, которые выводят данные мы подписываемся на получение данных из бд и соответсвенно все
+                 данные у нас записываются в формате Observable и после выводятся в файл html компонента
+            </p>
+
+            <p> В данном проекте используется <strong><a href="https://getbootstrap.com/" target="_blank" class="nav-item">bootstrap</a></strong>,<strong><a href="https://jquery.com/" target="_blank" class="nav-item">jquery</a></strong> и <strong> <a href="https://firebase.google.com/" target="_blank" class="nav-item">Firebase</a> </strong></p>
+            <p> Остались вопросы? Напиши мне в вк: <b><a href="vk.com/gaspromov" class='link' target="_blank">Ренат Газратов</a></b></p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+<app-footer-unsign></app-footer-unsign>

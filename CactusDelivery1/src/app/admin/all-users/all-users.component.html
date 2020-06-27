@@ -1,12 +1,12 @@
-<div class="row justify-content-center">
+<div class="justify-content-center">
     
     <div *ngIf="users" class="container p-4">
         <h4 class="mt-1 mb-4 text-center">Все пользователи</h4>
-        
+        <input type="text" class="form-control form-control-sm mb-2 col-6" [(ngModel)]="searchParam" placeholder="by name and surname">
         <div class="col-md-1"></div>
         <div class="col-md">
-            <div *ngFor="let user of users" class="">
-                <div class="card mb-3 p-2 justify-content-start row" style="min-height: 80px" *ngIf="user.email!='gazratov59@gmail.com' && user.email!='gaspromov@mail.ru' && user.status!='admin'">
+            <div *ngFor="let user of users | search : searchParam" class="">
+                <div class="card mb-3 p-2 justify-content-start row" style="min-height: 80px" *ngIf="user.status!='admin'">
                     <div > <span class="mr-2">Имя и фамилия: {{user.name}} {{user.sername}}</span>     Номер телефона: {{user.phone}}<br></div> 
                     <div>E-mail: {{user.email}}</div>
                     <div *ngIf="user.status=='user'">Ссылка на вк: {{user.vk_link}}</div>

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 })
 export class AllUsersComponent implements OnInit {
   users: any = [{}];
+  searchParam: string = '';
 
   constructor(
     public db: FirestoreAuthService,
@@ -37,6 +38,11 @@ export class AllUsersComponent implements OnInit {
 
   onDeleteCarrier(user_id){
     this.db.updateUser(user_id, {status: 'user'})
+  }
+
+  
+  onMakeCarrier(user_id){
+    this.db.updateUser(user_id, {status: 'carrier'})
   }
 
 }

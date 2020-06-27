@@ -1,14 +1,24 @@
-<div class="row justify-content-center">
+<div class="justify-content-center">
     <div *ngIf="orders" class="container p-4">
         <h4 class="mt-1 mb-4 text-center">Выполняемые заказы:</h4>
+        
+        
+        <div class="form-check mb-2">
+            <input type="checkbox" [(ngModel)]="deliveried" class="form-check-input" name="filterParams" id="deliveried">  
+            <label class="form-check-label mr-2" for="deliveried">Доставлено</label>  <br>
+            <input type="checkbox" [(ngModel)]="inProcess" class="form-check-input" name="filterParams" id="inProcess"> 
+            <label class="form-check-label mr-2" for="inProcess">Доставляется</label> <br>
+            <input type="checkbox" [(ngModel)]="willArrive" class="form-check-input" name="filterParams" id="willArrive"> 
+            <label class="form-check-label mr-2" for="willArrive">Выехали за посылкой</label>
+        </div>
     
         <div class="col-md-1"></div>
         <div class="col-md">
-            <div *ngFor="let order of orders" class="">
+            <div *ngFor="let order of orders | filtOrders : deliveried : inProcess : noCarrier : willArrive" class="">
                 <div class="card mb-3 p-2 justify-content-start row" style="min-height: 80px">
                     <span > 
                         <span class="mr-2">Дата заказа: {{order.data}}</span>     
-                        Стоимость: {{order.price}}
+                        Стоимость: {{order.price}} 
                     </span> 
                     От: {{order.name_sender}}, {{order.phone_sender}}, {{order.address_sender}} <br>
                     Кому: {{order.name_recipient}}, {{order.phone_recipient}}, {{order.address_recipient}} <br>

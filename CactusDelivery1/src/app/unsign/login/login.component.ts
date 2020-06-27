@@ -25,8 +25,11 @@ export class LoginComponent implements OnInit {
   }
 
   async login(email, password){
-    this.authService.login(email, password);
-    this.FireStore.setUserData(email);
+    this.authService.login(email, password)
+    // .then(() =>{
+      
+      this.FireStore.setUserData(email);
+    // });
   }
 
   // onLogin(email:string,password:string){

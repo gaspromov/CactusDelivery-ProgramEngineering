@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './unsign/signup/signup.component';
 import { LoginComponent } from './unsign/login/login.component';
@@ -27,17 +27,26 @@ import { PromokodsComponent } from './admin/promokods/promokods.component';
 import { TariffsComponent } from './admin/tariffs/tariffs.component';
 import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DocumentationComponent } from './forAll/documentation/documentation.component';
+import { MainUnsignComponent } from './unsign/main-unsign/main-unsign.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: 'unsign/home', component: HomeUnsignComponent, canActivate: [IsauthGuard],},
+  { path: 'unsign', component: HomeUnsignComponent, canActivate: [IsauthGuard],
+    children: [
+      {path: 'home', component: MainUnsignComponent},
+      { path: 'documentation', component: DocumentationComponent},
+    ]
+  },
   { path: 'user', component: HomeUserComponent, canActivate: [AuthGuard, IsuserGuard],
       children:[ 
         { path: 'home', component: MainUserComponent },
         { path: 'profile', component: ProfileUserComponent},
         { path: 'newOrder', component: MakeOrderComponent },
         { path: 'orders', component: CurrentOrdersComponent },
-        { path: 'order-confirm', component: OrderConfirmComponent }
+        { path: 'order-confirm', component: OrderConfirmComponent },
+        { path: 'documentation', component: DocumentationComponent },
       ]
   },
 
@@ -46,6 +55,7 @@ const routes: Routes = [
     children:[ 
       { path: 'profile', component: ProfileCarrierComponent },
       { path: 'newOrders', component: NewOrdersCarrierComponent },
+      { path: 'documentation', component: DocumentationComponent },
       { path: 'orders', component: CurrentOrdersCarrierComponent },
     ]
   },
@@ -55,11 +65,18 @@ const routes: Routes = [
     children:[ 
       { path: 'orders', component: OrdersAdminComponent },
       { path: 'users', component: AllUsersComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'documentation', component: DocumentationComponent },
       { path: 'promo', component: PromokodsComponent },
       { path: 'tariffs', component: TariffsComponent }
     ]
   },
+  
+  { path: 'documentation', component: DocumentationComponent},
   { path: '**', redirectTo: "/unsign/home" },
+  { path: 'profile', component: ProfileUserComponent},
+  { path: '**', redirectTo: "/profile" },
+
 ];
 
 @NgModule({

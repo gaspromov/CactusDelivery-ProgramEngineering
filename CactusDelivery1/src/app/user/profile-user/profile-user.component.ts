@@ -21,7 +21,7 @@ export class ProfileUserComponent implements OnInit {
     public auth: AuthService,
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.userData = JSON.parse(localStorage.getItem('userData'));
     // console.log(this.userData)
     this.formProfile = new FormGroup({

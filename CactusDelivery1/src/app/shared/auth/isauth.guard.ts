@@ -21,10 +21,11 @@ export class IsauthGuard implements CanActivate {
           this.router.navigate(['user/home']);
         }else 
         if (JSON.parse(localStorage.getItem('userData')).status == 'carrier'){
+          console.log('k')
           this.router.navigate(['carrier/profile']);
         }else
         if (JSON.parse(localStorage.getItem('userData')).status == 'admin'){
-          this.router.navigate(['admin/orders'])
+          this.router.navigate(['admin/dashboard']);
         }
       } 
     return true;

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { IgxMaskModule, IgxInputGroupModule } from 'igniteui-angular';
+import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,6 +58,13 @@ import { HeaderAdminComponent } from './admin/header-admin/header-admin.componen
 import { FooterAdminComponent } from './admin/footer-admin/footer-admin.component';
 import { ErrorComponent } from './forAll/error/error.component';
 import { RouterModule } from '@angular/router';
+import { DocumentationComponent } from './forAll/documentation/documentation.component';
+import { MainUnsignComponent } from './unsign/main-unsign/main-unsign.component';
+import { PasswordChangeComponent } from './forAll/password-change/password-change.component';
+import { ProfileUnsignComponent } from './unsign/profile-unsign/profile-unsign.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { SearchPipe } from './shared/pipes/search/search.pipe';
+import { FiltOrdersPipe } from './shared/pipes/filtOrders/filt-orders.pipe';
 
 @NgModule({
   declarations: [
@@ -102,11 +111,19 @@ import { RouterModule } from '@angular/router';
     HeaderAdminComponent,
     FooterAdminComponent,
     ErrorComponent,
+    DocumentationComponent,
+    MainUnsignComponent,
+    PasswordChangeComponent,
+    ProfileUnsignComponent,
+    DashboardComponent,
+    SearchPipe,
+    FiltOrdersPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    NgxEchartsModule.forRoot({echarts,}),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,

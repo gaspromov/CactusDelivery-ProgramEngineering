@@ -8,14 +8,18 @@
                 <form action="" [formGroup]="formProfile" class="form-group" (ngSubmit)="onUpdate()">
                     <div class="row">
                         <div class="col-md-4">
-                            <input class='form-control' type="text" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name">
-                            <input class='form-control' type="text" formControlName="sername" aria-describedby="surname" placeholder="Введите фамилию..."  name="surname">
-                            <input class='form-control form-group' type="text" formControlName="vk_link" aria-describedby="link" placeholder="Введите ссылку..."  name="link">
+                            <label for="firstname" class="mb-0">Имя:</label>
+                            <input class='form-control mb-2' type="text" id="firstname" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name">
+                            <label for="secondname" class="mb-0">Фамилия:</label>
+                            <input class='form-control mb-2' id="secondname" type="text" formControlName="sername" aria-describedby="surname" placeholder="Введите фамилию..."  name="surname">
+                            <label for="vk_link" class="mb-0">Ссылка на вк:</label>
+                            <input class='form-control form-group mb-2' id="vk_link" type="text" formControlName="vk_link" aria-describedby="link" placeholder="Введите ссылку..."  name="link">
                         </div>
                         <div class="col-md-4">
-                            <input class='form-control' type="text" formControlName="email" aria-describedby="email" placeholder="Введите email..."  name="email">
-                            <input class='form-control' type="text" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
-                            <input class='form-control' type="password" formControlName="password" aria-describedby="password" placeholder="Введите новый пароль..."  name="password">
+                            <label for="email" class="mb-0">Email:</label>
+                            <input class='form-control mb-2' type="text" id="email" formControlName="email" aria-describedby="email" placeholder="Введите email..."  name="email">
+                            <label for="phone" class="mb-0">Телефон:</label>
+                            <input class='form-control mb-2' id="phone" type="text" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
         
                         </div>
                         <div class="col-md-4"></div>
@@ -24,7 +28,7 @@
                             <div class="col-md-4">
                                 <div class="row">
                                     <button type="submit" class="form-control-sm form-control bg-success col-md-4 mr-3" [disabled]="formProfile.invalid"> Сохранить</button>
-                                    <a class="form-control-sm form-control bg-grey col-md-7 text-center"> Сменить пароль</a>
+                                    <a class="form-control-sm form-control  col-md-7 text-center" data-toggle="modal" data-target=".password-change"> Сменить пароль</a>
                                 </div>
                             </div>
                         </div>
@@ -34,3 +38,17 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+
+
+<div class="modal fade password-change" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xmd">
+      <div class="modal-content">
+  
+        <!-- Компонент "вход" -->
+        <app-password-change></app-password-change>
+        <!-- . -->
+  
+      </div>
+    </div>
+  </div>
+  

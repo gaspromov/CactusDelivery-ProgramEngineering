@@ -10,6 +10,10 @@ export class CurrentOrdersCarrierComponent implements OnInit {
 
   orders: any = [{}];
 
+  deliveried: boolean = false;
+  inProcess: boolean = false;
+  willArrive: boolean = false;
+  noCarrier: boolean = false;
   constructor(
     public db: OrdersService,
   ) { }
@@ -23,13 +27,10 @@ export class CurrentOrdersCarrierComponent implements OnInit {
   }
 
   newStatus(order_id: string, order_status: string){
-      console.log( order_status, order_id)
       if (order_status == 'Выехали за посылкой'){
-      console.log( order_status, order_id)
       this.db.updateOrder(order_id, {status: 'Доставляется'});
     }else
     if (order_status == 'Доставляется'){
-      console.log( order_status, order_id)
       this.db.updateOrder(order_id, {status: 'Доставлено'});
     }
   }
@@ -39,6 +40,7 @@ export class CurrentOrdersCarrierComponent implements OnInit {
       id: e.payload.doc.id,
       data: e.payload.doc.get('data'),
       phone_sender: e.payload.doc.get('phone_sender'),
+      price: e.payload.doc.get('price'),
       name_sender: e.payload.doc.get('name_sender'),
       name_recipient: e.payload.doc.get('name_recipient'),
       phone_recipient: e.payload.doc.get('phone_recipient'),

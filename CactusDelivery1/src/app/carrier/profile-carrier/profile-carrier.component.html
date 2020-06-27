@@ -8,25 +8,32 @@
                 <form action="" [formGroup]="formProfile" class="form-group" (ngSubmit)="onUpdate()">
                     <div class="row">
                         <div class="col-md-4">
-                            <input class='form-control mb-2' type="text" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name">
-                            <input class='form-control mb-2' type="text" formControlName="sername" aria-describedby="surname" placeholder="Введите фамилию..."  name="surname">
+                            <label for="firstname" class="mb-0">Имя:</label>
+                            <input class='form-control mb-2' id="firstname" type="text" formControlName="name" aria-describedby="name" placeholder="Введите имя..."  name="name">
+                            <label for="secondname" class="mb-0">Фамилия:</label>
+                            <input class='form-control mb-2' id="secondname" type="text" formControlName="sername" aria-describedby="surname" placeholder="Введите фамилию..."  name="surname">
                         </div>
                         <div class="col-md-4">
-                            <input class='form-control mb-2' type="text" formControlName="email" aria-describedby="email" placeholder="Введите email..."  name="email">
-                            <input class='form-control mb-2' type="text" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
+                            <label for="email" class="mb-0">Email:</label>
+                            <input class='form-control mb-2' type="text" id="email" formControlName="email" aria-describedby="email" placeholder="Введите email..."  name="email">
+                            <label for="phone" class="mb-0">Номер:</label>
+                            <input class='form-control mb-2' id="phone" type="text" formControlName="phone" aria-describedby="phone" placeholder="Введите номер телефона..."  name="phone">
         
                         </div>
                         <div class="col-md-4">
-                            <input class='form-control mb-2' type="text" formControlName="car_brand" aria-describedby="car_brand"  name="car_brand">
-                            <input class='form-control mb-2' type="text" formControlName="car_number" aria-describedby="car_number"  name="car_number">
-                            <input class='form-control mb-2' type="text" formControlName="car_color" aria-describedby="car_color" name="car_color">
+                            <label for="car_brand" class="mb-0">Марка машина:</label>
+                            <input class='form-control mb-2' id="car_brand" type="text" formControlName="car_brand" aria-describedby="car_brand"  name="car_brand">
+                            <label for="car_number" class="mb-0">Номер автомобиля:</label>
+                            <input class='form-control mb-2' id="car_number" type="text" formControlName="car_number" aria-describedby="car_number"  name="car_number">
+                            <label for="car_color" class="mb-0">Цвет автомобиля:</label>
+                            <input class='form-control mb-2' id="car_color" type="text" formControlName="car_color" aria-describedby="car_color" name="car_color">
                         </div>
                     </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="row">
                                     <button type="submit" class="form-control-sm form-control bg-success col-md-4 mr-3" [disabled]="formProfile.invalid"> Сохранить</button>
-                                    <a class="form-control-sm form-control bg-grey col-md-7 text-center"> Сменить пароль</a>
+                                    <a class="form-control-sm form-control  col-md-6=7 text-center" data-toggle="modal" data-target=".password-change"> Сменить пароль</a>
                                 </div>
                             </div>
                         </div>
@@ -36,3 +43,17 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+
+
+<div class="modal fade password-change" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xmd">
+      <div class="modal-content">
+  
+        <!-- Компонент "вход" -->
+        <app-password-change></app-password-change>
+        <!-- . -->
+  
+      </div>
+    </div>
+  </div>
+  

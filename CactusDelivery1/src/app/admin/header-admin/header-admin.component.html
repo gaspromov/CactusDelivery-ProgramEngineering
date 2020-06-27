@@ -1,14 +1,17 @@
 
     <!-- <img src="http://cactusdeliverylogo.std-715.ist.mospolytech.ru/CactusDelivery.svg" width="173" height="70" alt=""> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" routerLink="/admin/orders">181-321 Gazratov&Kuzyaeva</a>
+        <a class="navbar-brand" routerLink="/admin/orders">181-321 Gazratov</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="container">
 
-          <ul class="navbar-nav">
+          <ul class="navbar-nav" >
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> Dashboard<span class="sr-only">(current)</span></a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/admin/orders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> All orders<span class="sr-only">(current)</span></a>
             </li>
